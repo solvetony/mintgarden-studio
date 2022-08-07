@@ -41,7 +41,7 @@ const onChainMetadata = reactive<{
   licenseHash?: string;
 }>({ ...initialOnChainMetadata });
 const blockchainFee = ref(0);
-const confirmLegal = ref(false);
+const confirmLegal = ref(true);
 
 const dropzone = ref();
 const container = ref();
@@ -285,8 +285,8 @@ const getProgressWidth = () => {
       return '7%';
   }
 };
-const openFilePicker = () => {
-  document.querySelector('#dropzoneFileLabel').click();
+const loadObject = () => {
+  document.getElementById('dropJSON').click();
 };
 </script>
 <template>
@@ -636,6 +636,13 @@ const openFilePicker = () => {
           class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
         >
           Clear Everything
+        </button>
+          <button
+          type="button"
+          @click="loadObject()"
+          class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+        >
+          Load Object
         </button>
         <button
           type="submit"
