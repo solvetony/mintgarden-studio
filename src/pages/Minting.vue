@@ -285,6 +285,9 @@ const getProgressWidth = () => {
       return '7%';
   }
 };
+const openFilePicker = () => {
+  document.querySelector('#dropzoneFileLabel').click();
+};
 const loadObject = () => {
   document.getElementById('dropJSON').click();
 };
